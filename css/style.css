@@ -59,10 +59,6 @@ main * {
   margin: 0.5em 0;
 }
 
-.img {
-  border: 1px solid #ffbbbb;
-}
-
 .img img {
   border-radius: 10px;
   width: 100%;
