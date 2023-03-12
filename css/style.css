@@ -24,31 +24,25 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Outfit', sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
 }
 
 html {
   height: 100vh;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
-  background-color: #0d192b;
+  background-color: hsl(217, 54%, 11%);
+  font-size: 18px;
 }
 
 .container {
-  background-color: #14253d;
+  background-color: hsl(216, 50%, 16%);
   padding: 1.5em;
   margin: 0 1.5em;
   border-radius: 15px;
@@ -59,33 +53,61 @@ main * {
   margin: 0.5em 0;
 }
 
+.img {
+  position: relative;
+  cursor: pointer;
+}
 .img img {
   border-radius: 10px;
   width: 100%;
 }
+.img::before {
+  content: "";
+  background-color: aqua;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.img:hover::before {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.img::after {
+  content: "";
+  background: url(/images/icon-view.svg) center no-repeat;
+  background-size: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+}
+.img:hover::after {
+  opacity: 1;
+}
 
 .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0;
 }
-
 .menu img {
   padding-right: 5px;
 }
+.menu__item {
+  white-space: nowrap;
+}
 
 section {
-  border-bottom: 1px solid #2f415b;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
 }
 
 section h1 {
@@ -95,12 +117,12 @@ section h1 {
 }
 
 section h1:hover {
-  color: #00fff7;
+  color: hsl(178, 100%, 50%);
   cursor: pointer;
 }
 
 section h2 {
-  color: #00fff7;
+  color: hsl(178, 100%, 50%);
   font-weight: 400;
   font-size: 16px;
 }
@@ -110,42 +132,33 @@ section h2 {
 }
 
 section p {
-  font-size: 1em;
-  color: #8bacda;
+  font-size: 1rem;
+  color: hsl(215, 51%, 70%);
   font-weight: 300;
 }
 
 footer {
   margin-bottom: 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 7fr;
-      grid-template-columns: 1fr 7fr;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: 1fr 7fr;
+  justify-content: space-around;
+  align-items: center;
 }
-
 footer .name {
   color: white;
 }
-
 footer .name:hover {
-  color: #00fff7;
+  color: hsl(178, 100%, 50%);
   cursor: pointer;
 }
-
 footer img {
   width: 100%;
   border: 1px solid white;
   border-radius: 50%;
 }
-
 footer p {
   padding-left: 15px;
-  color: #8bacda;
+  color: hsl(215, 51%, 70%);
   font-weight: 300;
 }
 
@@ -154,13 +167,12 @@ footer p {
 }
 
 .borda1 {
-  border: 1px solid #ff0a0a;
+  border: 1px solid rgb(255, 10, 10);
 }
 
 .teste {
   position: absolute;
-  -webkit-transform: translate(320%, 300%);
-          transform: translate(320%, 300%);
+  transform: translate(320%, 300%);
   opacity: 0;
 }
 
@@ -169,4 +181,3 @@ header:hover .teste {
   opacity: 1;
   z-index: 1;
 }
-/*# sourceMappingURL=style.css.map */

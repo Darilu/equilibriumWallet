@@ -41,6 +41,8 @@ html{
 
 body{
     background-color: hsl(217, 54%, 11%) ;
+
+    font-size: 18px;
 }
 
 .container {
@@ -58,13 +60,50 @@ main{
 }
 
 .img {
+
+    position: relative;
+    cursor: pointer;
+
     img {
         border-radius: 10px;
         width: 100%;
     }
+    &::before{
+        content: "";
+        background-color: aqua;
+        border-radius: 10px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    &:hover::before{
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.3s;
+    }
+    
+    &::after{
+        content: "";
+        background: url(/images/icon-view.svg) center no-repeat;
+        background-size: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+    }
+    
+    &:hover::after{
+        opacity: 1;
+    }
+
 }
 
-//TIPOGRAFY
+
+
 .flex{
     display: flex;
     justify-content: space-between;
@@ -76,8 +115,13 @@ main{
     img{
         padding-right: 5px;
     }
+
+    &__item{
+        white-space: nowrap;
+    }
     
 }
+//TIPOGRAFY
 section {
     border-bottom: 1px solid hsl(215, 32%, 27%);
 }
@@ -101,13 +145,10 @@ section h2{
 }
 
 section p{
-    font-size: 1em;
+    font-size: 1rem;
     color: hsl(215, 51%, 70%) ;
     font-weight: 300; 
     
-    
-    
-    //Cyan: hsl(178, 100%, 50%)
 }
 
 
@@ -121,12 +162,13 @@ footer {
     
     .name {
         color: white;
+
+        &:hover {
+                color:hsl(178, 100%, 50%);
+                cursor: pointer;
+        }
     }
 
-    .name:hover {
-            color:hsl(178, 100%, 50%);
-            cursor: pointer;
-    }
     
     img {
         width: 100%;
