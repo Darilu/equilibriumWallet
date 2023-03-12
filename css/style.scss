@@ -186,23 +186,3 @@ footer {
     
     
 }
-
-.borda {
-    border: 1px solid white;
-}
-.borda1 {
-    border: 1px solid rgb(255, 10, 10);
-}
-
-.teste {
-    position: absolute;
-    transform: translate(320%, 300%);
-    opacity: 0;
-}
-
-header:hover .teste {
-    position: absolute;
-    opacity: 1;
-    z-index: 1;
-}
-
